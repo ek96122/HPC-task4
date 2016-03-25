@@ -61,7 +61,7 @@ int main(){
     
     //Defining a vector, which uses the initial condition u0, to hold the solution
     for (int i=0; i<Nx+1; i++) {
-        u0[i]=x[i]/(1-x[i]);
+        u0[i]=x[i]*(1-x[i]);
     }
     
     //Transfer entries from u0 vector to the u1 vector created earlier
