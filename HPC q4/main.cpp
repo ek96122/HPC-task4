@@ -78,7 +78,7 @@ int main(){
     
     TriMatrix Left(Nx, theta*nu*-1);
     TriMatrix Right(Nx, (1-theta)*nu);
-    
+    Right.convertMatrix();
     
     
     //forward Euler time integration via matrix multiplication
@@ -86,7 +86,9 @@ int main(){
     for (double i=0; i<(T-dt); i+=dt){
         
         u2=Left.inverse(Right.blasmultiply(u1));
-        u1=u2;}
+        u1=u2;
+        cout<<i<<endl;
+    }
     
     cout<<endl;
     cout <<"time-integration output" <<endl;
